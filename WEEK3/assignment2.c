@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-/* I chose to use character pointers for strings not character arrays  */
-/* because using built in functions was not allowed */
-/* also lengths of strings can be different */
-/* which makes using for loop for swapping strings impossible. */
+/* I chose to use character pointers for strings not character arrays
+because using built in functions was not allowed 
+also lengths of strings can be different
+which makes using for loop for swapping strings impossible. */
 
 void swapStrings(char **destination, char **source);              
 														

@@ -24,7 +24,7 @@ void swapArrays(int a1[], int a2[], int len){
     int temp[len];
     
     for(int i = 0; i < len; i++){
-        temp[i] = a1[i];  		 /* a temporary array to store the elements of a1 in the process of swapping  */
+        temp[i] = a1[i];  			// a temporary array to store the elements of a1 in the process of swapping.
         a1[i] = a2[i];
         a2[i] = temp[i];
     }
