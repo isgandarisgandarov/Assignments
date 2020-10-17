@@ -39,7 +39,7 @@ int solveMaze(char **maze, const int HT, const int WD, int x, int y){
     if(solveMaze(maze, HT, WD, x + 1, y) == 1) return 1; // checks the east direction
     if(solveMaze(maze, HT, WD, x, y + 1) == 1) return 1; // checks the south direction
     if(solveMaze(maze, HT, WD, x - 1, y) == 1) return 1; // checks the west direction
-	maze[y][x] = 'x'; // unmarks visited point (it is not correct route)
+	maze[y][x] = ' '; // unmarks visited point if it is not correct
 	return 0;
 }
 
