@@ -24,7 +24,7 @@ void luckyCustomer(struct Node** head_ref, char *key){
         }
         prev->next = temp->next;
     }
-    struct Node *new_node = (struct Node*)malloc(sizeof(struct Node*));
+    struct Node *new_node = (struct Node*)malloc(sizeof(struct Node));
     struct Node *last = *head_ref;
     strcpy(new_node->data, temp->data);
     new_node->next = NULL;
