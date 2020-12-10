@@ -4,45 +4,10 @@
 
 #define BUFF_SIZE 256
 
-bool won(char *output, int len){
-    for (int i = 0; i < len; i++){
-        if (output[i] != '+')
-            return  false;
-    }
-return true;
-}
 
-char *check(char *password, int len, char *input){
-    int input_len = 0;
-    char *checked = (char*)malloc(BUFF_SIZE * sizeof(char));
-    
-    while (input[input_len] != '\0'){
-        input_len++;
-    }
-    if (len != input_len){
-        return "*";
-    }
-    for (int i = 0; i < len; i++){
-        if (password[i] == input[i]){
-            checked[i] = '+';
-        }
-        else{
-            bool flag = false;
-            for(int j = 0; j < len; j++){
-                if (input[i] == password[j]){
-                    flag = true;
-                    break;
-                }
-            }
-            if (flag)
-                checked[i] = '!';
-            else
-                checked[i] = '.';
-        }
-    }
+char *check(char *password, int len, char *input);
 
-return checked;
-}
+bool won(char *output, int len);
 
 int main(int argc, char **argv){
     char c;
@@ -148,5 +113,45 @@ int main(int argc, char **argv){
     }
 
 return 0;
+}
+
+char *check(char *password, int len, char *input){
+    int input_len = 0;
+    char *checked = (char*)malloc(BUFF_SIZE * sizeof(char));
+    
+    while (input[input_len] != '\0'){
+        input_len++;
+    }
+    if (len != input_len){
+        return "*";
+    }
+    for (int i = 0; i < len; i++){
+        if (password[i] == input[i]){
+            checked[i] = '+';
+        }
+        else{
+            bool flag = false;
+            for(int j = 0; j < len; j++){
+                if (input[i] == password[j]){
+                    flag = true;
+                    break;
+                }
+            }
+            if (flag)
+                checked[i] = '!';
+            else
+                checked[i] = '.';
+        }
+    }
+
+return checked;
+}
+
+bool won(char *output, int len){
+    for (int i = 0; i < len; i++){
+        if (output[i] != '+')
+            return  false;
+    }
+return true;
 }
 
